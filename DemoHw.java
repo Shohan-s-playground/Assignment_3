@@ -51,7 +51,10 @@ public class DemoHw {
         System.out.print("Enter your subject 2: ");
         String subject2 = scanner.nextLine().strip();
         String last2=subject2.substring(3);
-        if (!(last1!=last2)||!(subject2.startsWith("SE-"))|| (subject2.length()!=4)) {
+        if (last1.equals(last2)){
+            System.out.println("\033[31mAlready entered one");
+            break myBlock;}
+        else if (!(subject2.startsWith("SE-"))|| (subject2.length()!=4)) {
             System.out.println("\033[31mInvalid Subject"); 
             break myBlock;}
         
@@ -75,7 +78,11 @@ public class DemoHw {
         System.out.print("Enter your subject 3: ");
         String subject3 = scanner.nextLine().strip();
         String last3=subject3.substring(3);
-        if (!(last3!=last2)||!(last3!=last1)||!(subject3.startsWith("SE-"))|| (subject3.length()!=4)) {
+        if (last3.equals(last2)|last3.equals(last1)){
+            System.out.println("\033[31mAlready entered one");
+            break myBlock;}
+        
+        else if(!(subject3.startsWith("SE-"))|| (subject3.length()!=4)) {
             System.out.println("\033[31mInvalid Subject");
             break myBlock;}
         
